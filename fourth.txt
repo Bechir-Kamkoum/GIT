@@ -1,0 +1,143 @@
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/mahdi/Desktop/learn_git_again/.git/
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   third.txt
+
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "adding tthird.txt"
+[master (root-commit) 7540ba1] adding tthird.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 7540ba10b0e2155d9a0301054fbe286b87749628 (HEAD -> master)
+Author: bechir kamkoum <bechirkamkoum@gmail.com>
+Date:   Mon Nov 23 21:19:02 2020 +0100
+
+    adding tthird.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "fourth.txt"
+[master 07636df] fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git rm third.txt
+rm 'third.txt'
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    third.txt
+
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "removing third.txt"
+[master 8294331] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 8294331fe5c1bdb6e90c8abe7f6da2732e8c1375 (HEAD -> master)
+Author: bechir kamkoum <bechirkamkoum@gmail.com>
+Date:   Mon Nov 23 21:28:51 2020 +0100
+
+    removing third.txt
+
+commit 07636df71614c8885997cd552a64cf3ff8d9f146
+Author: bechir kamkoum <bechirkamkoum@gmail.com>
+Date:   Mon Nov 23 21:24:55 2020 +0100
+
+    fourth.txt
+
+commit 7540ba10b0e2155d9a0301054fbe286b87749628
+Author: bechir kamkoum <bechirkamkoum@gmail.com>
+Date:   Mon Nov 23 21:19:02 2020 +0100
+
+    adding tthird.txt
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.pager
+bash: $'\302\203git': command not found
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.pager cat
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+gui.recentrepo=C:/Users/mahdi/Bechir
+user.email=bechirkamkoum@gmail.com
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+user.name=bechir kamkoum
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git remote add CheckpointGit https://github.com/Bechir-Kamkoum/GIT.git
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git remote add origin https://github.com/Bechir-Kamkoum/GIT.git
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (master)
+$ git branch -M main
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (main)
+$ git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 634 bytes | 31.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Bechir-Kamkoum/GIT.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+mahdi@mahdi-PC MINGW64 ~/Desktop/learn_git_again (main)
+$
